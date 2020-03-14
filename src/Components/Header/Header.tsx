@@ -5,6 +5,7 @@ interface IHeader {
     handleSearchClick: (evt: React.MouseEvent<HTMLElement>, tag: string | undefined) => void;
     handleGroupClick: (evt: React.MouseEvent<HTMLElement>) => void;
     handleClearClick: (evt: React.MouseEvent<HTMLElement>) => void;
+    handleImageClick: (evt: React.MouseEvent<HTMLElement> | React.FocusEvent<HTMLElement>, tag: string) => void,
     isLoading: boolean;
     searchTag: string;
     group: boolean;
@@ -14,6 +15,7 @@ export const Header = ({
                            handleSearchClick,
                            handleGroupClick,
                            handleClearClick,
+                           handleImageClick,
                            isLoading,
                            searchTag,
                            group,
@@ -29,6 +31,7 @@ export const Header = ({
         <Container className="d-flex flex-sm-nowrap">
             <Input className="mr-2" type="text" name="text" placeholder="введите тег"
                    value={tag}
+                   onBlur={evt => handleImageClick(evt, tag)}
                    onChange={evt => setTag(evt.target.value)}/>
             <Button className="mr-2" color="success"
                     disabled={isLoading}

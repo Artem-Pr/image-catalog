@@ -78,7 +78,7 @@ function App() {
         setState([]);
     };
 
-    const handleImageClick = (evt: React.MouseEvent<HTMLElement>, tag: string): void => {
+    const handleImageClick = (evt: React.MouseEvent<HTMLElement> | React.FocusEvent<HTMLElement>, tag: string): void => {
         evt.preventDefault();
         setSearchTag(tag);
     };
@@ -88,6 +88,7 @@ function App() {
             <Header handleSearchClick={handleSearchClick}
                     handleGroupClick={handleGroupClick}
                     handleClearClick={handleClearClick}
+                    handleImageClick={handleImageClick}
                     isLoading={isLoading}
                     searchTag={searchTag}
                     group={group}/>
