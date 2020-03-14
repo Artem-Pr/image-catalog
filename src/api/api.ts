@@ -9,7 +9,7 @@ export const giphyAPI = {
         return instance.get(`/random`, {
             params: {
                 tag: tag,
-                api_key: "eRLxLG7aD0evVVEdqxCHgsSSVbeDm7LI"
+                api_key: "dc6zaTOxFJmzC"
             }
         })
     }
